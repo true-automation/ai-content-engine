@@ -1,40 +1,28 @@
-📦 ai-content-engine
-Modular AI-powered content generation system for scripts, voiceovers, thumbnails, metadata & automated rendering.
+# 📦 **ai-content-engine**
+### *Modular AI-powered content generation system for scripts, voiceovers, thumbnails, metadata & automated rendering.*
 
-ai-content-engine is a fully automated content production pipeline designed for high-volume creators, agencies, and AI-driven automation systems.
-It allows you to generate scripts → voiceovers → video scenes → subtitles → thumbnails → metadata with a single command or API call.
+`ai-content-engine` is a fully automated content production pipeline designed for high-volume creators, agencies, and AI-driven automation systems.  
+It allows you to generate **scripts → voiceovers → video scenes → subtitles → thumbnails → metadata** with a single command or API call.
 
 Built for:
+- TikTok / Reels / Shorts  
+- YouTube long/short-form  
+- B2B content creation workflows  
+- Fully automated posting systems (n8n, custom bots, browser agents)
 
-TikTok / Reels / Shorts
+## 🚀 **Key Features**
+- **AI Script Generator** (OpenAI / Groq)
+- **AI Voiceover Generation** (ElevenLabs / OpenAI TTS)
+- **Video Assembly Pipeline** (FFmpeg)
+- **Auto Subtitles** (Whisper / faster-whisper)
+- **Thumbnail Generator** (DALL·E / Midjourney API)
+- **Auto Metadata Generation** (titles, hashtags, keywords, descriptions)
+- **JSON-based content plan system**
+- **Local or cloud storage** (VPS, S3, GCS)
+- **Extensible plugin architecture**
 
-YouTube long/short-form
-
-B2B content creation workflows
-
-Fully automated posting systems (n8n, custom bots, browser agents)
-
-🚀 Key Features
-
-AI Script Generator (OpenAI / Groq)
-
-AI Voiceover Generation (ElevenLabs / OpenAI TTS)
-
-Video Assembly Pipeline (FFmpeg)
-
-Auto Subtitles (Whisper / faster-whisper)
-
-Thumbnail Generator (DALL·E / Midjourney API)
-
-Auto Metadata Generation (titles, hashtags, keywords, descriptions)
-
-JSON-based content plan system
-
-Local or cloud storage (VPS, S3, GCS)
-
-Extensible plugin architecture
-
-📁 Directory Structure
+## 📁 **Directory Structure**
+```
 ai-content-engine/
  ├── src/
  │   ├── ai/
@@ -65,8 +53,10 @@ ai-content-engine/
  ├── requirements.txt
  ├── README.md
  └── LICENSE
+```
 
-⚙️ Installation
+## ⚙️ **Installation**
+```bash
 git clone https://github.com/yourusername/ai-content-engine.git
 cd ai-content-engine
 
@@ -75,44 +65,40 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 cp .env.example .env
+```
 
-
-Update your .env file:
-
+Update your `.env` file:
+```
 OPENAI_API_KEY=xxxx
 ELEVENLABS_API_KEY=xxxx
 STORAGE_PATH=./content
+```
 
-🧠 How It Works
+## 🧠 **How It Works**
+1. **User Input**
+   - topic
+   - style
+   - duration
+   - platform (TikTok/Shorts/YouTube)
+2. **AI Creates Script**
+3. **AI Creates Voiceover**
+4. **Video Builder assembles clips + subtitles + music**
+5. **Thumbnail AI generates cover**
+6. **Output stored in `/content/...`**
 
-User Input
-
-topic
-
-style
-
-duration
-
-platform (TikTok/Shorts/YouTube)
-
-AI Creates Script
-
-AI Creates Voiceover
-
-Video Builder assembles clips + subtitles + music
-
-Thumbnail AI generates cover
-
-Output stored in /content/...
-
-📌 Quick Start
-Generate one complete content package:
+## 📌 **Quick Start**
+### Generate one complete content package:
+```bash
 python src/workflows/generate_content.py --topic "AI tools 2025"
+```
 
-Generate 10 videos (batch):
+### Generate 10 videos (batch):
+```bash
 python src/workflows/batch_runner.py --file examples/demo_request.json
+```
 
-🧩 Example JSON Input
+## 🧩 Example JSON Input
+```json
 {
   "topic": "Productivity hacks for software engineers",
   "style": "motivational",
@@ -120,75 +106,53 @@ python src/workflows/batch_runner.py --file examples/demo_request.json
   "voice": "male-energetic",
   "duration": 30
 }
+```
 
-🖼 Output Example Structure
+## 🖼 Output Example Structure
+```
 content/
   scripts/2025-11-25_productivity.txt
   voice/2025-11-25_productivity.wav
   videos/2025-11-25_productivity.mp4
   thumbnails/2025-11-25_productivity.png
   subtitles/2025-11-25_productivity.srt
+```
 
-🧪 Extensible Plugin Architecture
-
+## 🧪 **Extensible Plugin Architecture**
 You can easily plug in:
-
-New AI models
-
-Custom voices
-
-CapCut API
-
-DaVinci Resolve scripts
-
-n8n / Zapier triggers
-
-Custom rendering templates
+- New AI models  
+- Custom voices  
+- CapCut API  
+- DaVinci Resolve scripts  
+- n8n / Zapier triggers  
+- Custom rendering templates  
 
 Each module is replaceable.
 
-🛠 Tech Stack
+## 🛠 **Tech Stack**
+- Python 3.11
+- OpenAI API
+- ElevenLabs API
+- FFmpeg
+- Whisper / faster-whisper
+- PIL / OpenCV
+- Rich (CLI UI)
+- pydantic (config & schema)
+- asyncio
 
-Python 3.11
+## 🧵 **Roadmap**
+- [ ] Multi-template rendering system  
+- [ ] Character animation support  
+- [ ] Music generation module  
+- [ ] Voice clone library  
+- [ ] Real-time content API  
+- [ ] Web dashboard UI  
+- [ ] Full CLI "wizard" mode  
 
-OpenAI API
-
-ElevenLabs API
-
-FFmpeg
-
-Whisper / faster-whisper
-
-PIL / OpenCV
-
-Rich (CLI UI)
-
-pydantic (config & schema)
-
-asyncio
-
-🧵 Roadmap
-
- Multi-template rendering system
-
- Character animation support
-
- Music generation module
-
- Voice clone library
-
- Real-time content API
-
- Web dashboard UI
-
- Full CLI "wizard" mode
-
-📝 License
-
+## 📝 License
 MIT License
 
-👨‍💻 Maintainer
-
-Babi Panda
-AI Automation Engineer
+## 👨‍💻 Maintainer  
+**Babi Panda**  
+AI Automation Engineer  
 Creator of multi-platform automation content systems
